@@ -1,17 +1,14 @@
 import { initializeApp } from "firebase/app";
-import dotenv from "dotenv";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-dotenv.config();
-
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID,
+  apiKey: "AIzaSyATM13eUTu_dxb7HVsuztzwHt-nLqO_0a4",
+  authDomain: "paper-trading-38d7a.firebaseapp.com",
+  projectId: "paper-trading-38d7a",
+  storageBucket: "paper-trading-38d7a.appspot.com",
+  messagingSenderId: "1001224403196",
+  appId: "1:1001224403196:web:990427e550ec1f40feff79",
 };
 
 export const app = initializeApp(firebaseConfig);
