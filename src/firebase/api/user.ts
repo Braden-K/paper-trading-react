@@ -1,7 +1,7 @@
-import { CreateUserInfo, UserAuthResponse } from "../types";
+import { CreateUserInfo, UserAuthResponse } from "../../types";
 import { createUser } from "./userAuth";
-import { Collection } from "./collection";
-import { User } from "../types";
+import { Collection, QueryOperator } from "./collection";
+import { User } from "../../types";
 
 const userCollection = new Collection<User>("users");
 
@@ -25,4 +25,17 @@ export const postUser = async (
   } else {
     return { success: false, uid: null };
   }
+};
+
+export const getUserById = async (uid: string) => {
+  const users: User[] | null = (await userCollection.getDocs(
+    "uid",
+    QueryOperator.EQUALS,
+    uid
+  )) as User[] | null;
+  if (!users) {
+    return { success: false, user: null };
+  }
+  console.log("user is ", users[0]);
+  return { success: true, user: users[0] };
 };

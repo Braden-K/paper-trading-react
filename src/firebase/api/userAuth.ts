@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import { FirebaseAuthUserInfo, UserAuthResponse } from "../types";
+import { FirebaseAuthUserInfo, UserAuthResponse } from "../../types";
 
 export const createUser = async (
   userInfo: FirebaseAuthUserInfo

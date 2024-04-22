@@ -13,3 +13,9 @@ export type User = {
   firstName: string;
   email: string;
 };
+
+export type UserState = {
+  user: User | null;
+};
+
+export type UserResponse = ResponseStatus & { user: User | null };
